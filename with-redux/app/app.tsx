@@ -1,5 +1,3 @@
-import '../styles/global-styles.scss';
-
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 import Index from '../pages/index';
@@ -11,7 +9,7 @@ import Mkq from '../pages/mkq';
 
 function App() {
     return (
-        
+        <div>
         <Router>
             <Routes>
                 <Route path="/" element={<Index />} />
@@ -22,6 +20,7 @@ function App() {
 
             </Routes>
         </Router>
+        </div>
     );
 }
 
