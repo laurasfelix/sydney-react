@@ -49,5 +49,40 @@ body {
 
 .container{
   display:flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  
 
+}
+
+img:hover {
+  -moz-transform: scale(1.06);
+  -webkit-transform: scale(1.06);
+  -ms-transform: scale(1.06);
+  -o-transform: scale(1.06);
+  transform: scale(1.06);
+}
+img{-webkit-transition: transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
+  transition: transform 0.2s ease;
+}
+
+.shared-hover-effect:hover{
+  background-color: #FFC300;
+  color:#138b45;
+}
+.shared-hover-effect:hover .sydney{
+  color:#FFC300;
+  background-color:#8B4513;
+  font-size: larger;
+}
+
+.title:hover{
+  transform: scale(1.1);
+}
+
+.title{
+  width: 200px;
+  height: 30px;
 }
