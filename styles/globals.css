@@ -1,0 +1,53 @@
+/* globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Gloria Hallelujah';
+  src: url('/fonts/GloriaHallelujah.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+:root { 
+  --background: #f6eb9f;
+  --foreground: #171717;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Gloria Hallelujah', cursive;
+}
+.navbar{
+  background-color: #8B4513;
+  color: #f6eb9f;
+  width: 100%;
+  height: auto;
+  padding: 5px 0;
+}
+.navbar-list{
+ 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+.sunflower{
+  width: 20%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  z-index: 0;
+}
+.sunflower-img{
+  background-color: transparent;
+}
+
+.container{
+  display:flex;
+
+}
