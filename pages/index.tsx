@@ -11,15 +11,26 @@ export default function Home() {
     <div className="container">
 
 
-      <div className="title shared-hover-effect">
+      <div className="welcome-text">
+        <div className="title text-2xl shared-hover-effect">   this is <span className="sydney"> sydney's</span> story </div>
 
-        this is <span className="sydney"> sydney's</span> story
+        <div className="container-text text-m mt-4">
+          <div>
+            Sydney Claire Hoppenworth was born 21 (!!) years ago in Chicago to Mike and Leni Manaa-Hoppenworth.
+          </div>
+
+          <div>
+            This is a celebration of her.  
+          </div>
+        </div>
 
       </div>
+
 
       <div className="sunflower inline-block">
         <img className="sunflower-img" src="/sunflower_little.png" />
       </div>
+
 
     </div>
    

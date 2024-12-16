@@ -10,9 +10,9 @@ const Navbar = () => {
                     </li>
                     <a href="/timeline"> timeline </a>
                     <li>
-                    <a href="/quiz"> quiz </a>
+                    <a href="/connections"> connections </a>
                     </li>
-                    <a href="/quiz"> wordle </a>
+                    <a href="/connections"> wordle </a>
                     <li>
                         
                     </li>
