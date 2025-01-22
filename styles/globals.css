@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --cell-size: 80px;
+  --horizontal-gap: 8px;
+  --vertical-gap: 15px;
+}
+
 @font-face {
   font-family: 'Gloria Hallelujah';
   src: url('/fonts/GloriaHallelujah.ttf') format('truetype');
@@ -181,4 +187,43 @@ img{-webkit-transition: transform 0.2s ease;
   .timeline-item.right {
     margin-left: 0;
   }
+}
+
+.wordleItem{
+  border: solid #8B4513 2px;
+  box-sizing: border-box;  
+  height: var(--cell-size);
+  width: var(--cell-size);
+  text-align: center;
+  background-color: #ffffffae;
+  align-items: center;    
+  justify-content: center;
+  font-size: x-large;
+  
+}
+
+.font{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.wordleRow{
+  display: flex;
+  flex-direction: row;
+  gap: var(--horizontal-gap);
+
+}
+
+.wordle{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--vertical-gap);
 }

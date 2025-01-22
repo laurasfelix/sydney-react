@@ -12,7 +12,7 @@ const Navbar = () => {
                     <li>
                     <a href="/connections"> connections </a>
                     </li>
-                    <a href="/connections"> wordle </a>
+                    <a href="/wordle"> wordle </a>
                     <li>
                         
                     </li>

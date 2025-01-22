@@ -20,7 +20,7 @@ export default function Home() {
           </div>
 
           <div>
-            This is a celebration of her.  
+            This is a celebration of her. Also includes some additional commentary...
           </div>
         </div>
 
