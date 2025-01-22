@@ -6,6 +6,7 @@ import { words } from './const';
 export default function Wordle() {
     const [index, setIndex] = useState(0);
     const [answer, setAnswer] = useState("");
+   
 
     // startup choice for the answer
     useEffect(() => {
@@ -22,23 +23,40 @@ export default function Wordle() {
     const [guess, setGuess] = useState(Array(6).fill(""));
     const [done, setDone] = useState(Array(6).fill(false));
     const [correct, setCorrect] = useState(false);
+    const [full, setFull] = useState(false);
+
+    useEffect( () => {
+  
+      console.log("answer", answer);
+      console.log("")
+      if (guess[index] == answer && answer != ""){
+        setCorrect(true);
+      }
+
+    }
+    , [guess, answer]);
 
 
     useEffect(() => {
 
       const handleKey = (e: KeyboardEvent) =>
       {
-
+        
+       
         const letter = e.key.toLowerCase();
 
-        if (/^[a-z]$/.test(letter)){
-          console.log("letter", letter);
-          console.log("guess in add", guess);
-          console.log("index", index);
+        if (/^[a-z]$/.test(letter) && !correct && !done.every(Boolean)){
           setGuess(prev => {
             const newGuesses = [...prev];
             if ((newGuesses[index] + letter).length <= 5)
             {
+              if ((newGuesses[index] + letter).length == 5)
+              {
+                setFull(true);
+              }
+              else{
+                setFull(false);
+              }
             newGuesses[index] += letter;
             }
             return newGuesses;
@@ -47,15 +65,17 @@ export default function Wordle() {
         }
 
         else if (letter === 'backspace') {
+          setFull(false);
           setGuess((prev) => {
           const newGuesses = [...prev];
           newGuesses[index] = newGuesses[index].slice(0, -1);
           return newGuesses;
         })
       }
-
-        else if (letter == "enter")
+        
+        else if ((letter == "enter" || letter == "Enter") && !correct && full)
         {
+
           setDone((prev) => {
             const newDone = [...prev];
             newDone[index] = true;
@@ -65,15 +85,14 @@ export default function Wordle() {
         }
 
       };
-
+     
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
 
     }
     
-    , [index])
+    , [index, full])
 
-    console.log("guess", guess);
     return (
       
      <div className="font-[family-name:var(--font-gloria-hallelujah)">
@@ -92,6 +111,7 @@ export default function Wordle() {
             wordChosen={item}
             wordAnswer={answer}
             done={done}
+            idx={idx}
           />
 
         </div>
@@ -101,6 +121,8 @@ export default function Wordle() {
         )
 
         }
+
+        {correct && done[index] && <div> Woah, congrats!! You got it. </div> }
 
       </div>
 

@@ -4,22 +4,36 @@ interface WordleItemProps {
     wordChosen: string,
     wordAnswer: string, 
     done: boolean[],
+    idx: number,
   }
 
 const WordleItem: React.FC<WordleItemProps> = (
-    {wordAnswer, wordChosen, done}
+    {wordAnswer, wordChosen, done, idx}
 ) => {
-    console.log("chosen here:", wordChosen);
-    console.log("done value", done);
+
+    const colorPicker = (answer:string, choice:string, idx:number) =>{
+
+        if (answer[idx] == choice[idx]){
+            return "green";
+        }
+        else if (answer.includes(choice[idx])){
+            return "gold";
+        }
+        else{
+            return "red";
+        }
+
+    };
+    
     return (
     <div  className='wordleRow'>
     {wordAnswer.split('').map((item, index) =>
 
     (
         
-    done[index] ? 
+    done[idx] ? 
         (<div key={index} className='wordleItem'>
-                <span className='font'> {wordChosen.split('')[index]} </span>
+                <span className='font' style={{backgroundColor: colorPicker(wordAnswer, wordChosen, index), color:'white'}}> {wordChosen.split('')[index]} </span>
         </div>)
     : 
     (<div key={index} className='wordleItem'>

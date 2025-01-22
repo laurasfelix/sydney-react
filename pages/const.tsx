@@ -110,6 +110,8 @@ export const words = [
     "latte",
     "peeta",
     "bella",
+    "poopy",
+    "daddy",
 
 
 ]
