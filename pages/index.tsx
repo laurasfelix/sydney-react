@@ -1,5 +1,4 @@
 //pages/index.tsx
-import Image from "next/image";
 import Navbar from '../components/navbar'
 
 export default function Home() {
@@ -12,7 +11,7 @@ export default function Home() {
 
 
       <div className="welcome-text">
-        <div className="title text-2xl shared-hover-effect">   this is <span className="sydney"> sydney's</span> story </div>
+        <div className="title text-2xl shared-hover-effect">   this is <span className="sydney"> sydney&apos;s</span> story </div>
 
         <div className="container-text text-m mt-4">
           <div> 

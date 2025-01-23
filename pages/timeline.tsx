@@ -1,5 +1,4 @@
 import Navbar from '../components/navbar'
-import TimelineItem from '../components/timelineitem';
 
 export default function Timeline() {
 

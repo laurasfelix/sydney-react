@@ -11,7 +11,6 @@ interface TimelineItemProps {
 
 const TimelineItem: React.FC<TimelineItemProps> = ({
   date,
-  title,
   description,
   badge,
   iconClass,

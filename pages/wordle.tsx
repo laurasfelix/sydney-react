@@ -1,4 +1,4 @@
-import React, {EventHandler, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Navbar from '../components/navbar'
 import WordleItem from '@/components/wordleitem';
 import { words } from './const';
@@ -14,9 +14,9 @@ export default function Wordle() {
 
       setClickedPlay(false);
 
-      var length = words.length;
+      let length = words.length;
 
-      var choiceIdx = Math.floor(Math.random() * length);
+      let choiceIdx = Math.floor(Math.random() * length);
 
       setAnswer(words[choiceIdx]);
 
@@ -179,7 +179,7 @@ export default function Wordle() {
 
               {correct && done[index] && <div className='congrats'> Woah, congrats!! You got it. </div> }
 
-              {!correct && done.every(Boolean) && <div className='notcongrats'> Oops :( it's {answer}... </div>}
+              {!correct && done.every(Boolean) && <div className='notcongrats'> Oops :( it&apos;s {answer}... </div>}
 
               </div>
 
