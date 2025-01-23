@@ -15,12 +15,12 @@ export default function Home() {
         <div className="title text-2xl shared-hover-effect">   this is <span className="sydney"> sydney's</span> story </div>
 
         <div className="container-text text-m mt-4">
-          <div>
-            Sydney Claire Hoppenworth was born 21 (!!) years ago in Chicago to Mike and Leni Manaa-Hoppenworth.
+          <div> 
+          <span className="sydney shared-hover-effect"> Sydney </span> <span className="sydney shared-hover-effect"> Claire </span> <span className="sydney shared-hover-effect"> Hoppenworth </span> was born <span className="hover:text-4xl hover:text-red-500"> 21 </span>(!!) years ago in Chicago to Mike and Leni Manaa-Hoppenworth.
           </div>
 
           <div>
-            This is a celebration of her. Also includes some additional commentary...
+            This is a celebration of her. <span className="hehehe"> Also includes some additional commentary... </span>
           </div>
         </div>
 

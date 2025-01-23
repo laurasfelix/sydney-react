@@ -8,11 +8,11 @@ const Navbar = () => {
                     <li>
                     <a href="/"> <img src="/sunflower.png" width="28px" height="auto"/> </a>
                     </li>
-                    <a href="/timeline"> timeline </a>
+                    <a className="title-hover" href="/timeline"> timeline </a>
                     <li>
-                    <a href="/connections"> connections </a>
+                    <a className="title-hover" href="/connections"> connections </a>
                     </li>
-                    <a href="/wordle"> wordle </a>
+                    <a  className="title-hover" href="/wordle"> wordle </a>
                     <li>
                         
                     </li>

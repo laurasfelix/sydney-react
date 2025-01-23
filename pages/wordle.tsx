@@ -130,9 +130,20 @@ export default function Wordle() {
       {
         !clickedPlay &&
         <div className='play'>
-          <div className='welcome-wordle'> Hey there. </div>
-          <span>Get 6 (SIX) chances to guess a Sydney-related 5-letter word.</span>
-          <div className='playButton'> <button onClick={handleClick}> play </button> </div>
+          <div className="grid">
+            <div className="cell white"></div>
+            <div className="cell white"></div>
+            <div className="cell white"></div>
+            <div className="cell green"></div>
+            <div className="cell yellow"></div>
+            <div className="cell green"></div>
+            <div className="cell green"></div>
+            <div className="cell green"></div>
+            <div className="cell green"></div>
+          </div>
+          <div className='welcome-wordle title-hover'> Hey there. </div>
+          <span className='title-hover'>Get 6 (SIX) chances to guess a Sydney-related 5-letter word.</span>
+          <div className='playButton title-hover'> <button onClick={handleClick}> play </button> </div>
         </div>
       }
       
