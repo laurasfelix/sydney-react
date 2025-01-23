@@ -8,7 +8,7 @@ const Navbar = () => {
         <div className='navbar'>
                 <ul className='navbar-list'>
                     <li>
-                    <Link href="/"> <Image alt="sunflower" src="/sunflower.png" width="28"/> </Link>
+                    <Link href="/"> <Image alt="sunflower" src="/sunflower.png" width="28" height="28"/> </Link>
                     </li>
                     <Link className="title-hover" href="/timeline"> timeline </Link>
                     <li>

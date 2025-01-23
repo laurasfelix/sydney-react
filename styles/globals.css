@@ -43,7 +43,8 @@ body {
 }
 
 .sunflower{
-  width: 20%;
+  width: auto;
+  height: auto;
   align-items: center;
   text-align: center;
   justify-content: center;
@@ -51,6 +52,8 @@ body {
 }
 .sunflower-img{
   background-color: transparent;
+  max-width: none;
+  max-height: none;
 }
 
 .container{

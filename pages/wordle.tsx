@@ -124,7 +124,7 @@ export default function Wordle() {
 
     return (
       
-     <div className="font-[family-name:var(--font-gloria-hallelujah)">
+     <div className="font-Gloria_Hallelujah">
       <Navbar />
 
       {

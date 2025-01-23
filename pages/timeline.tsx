@@ -19,7 +19,7 @@ export default function Timeline() {
   ];
     return (
       
-     <div className="font-[family-name:var(--font-gloria-hallelujah)">
+     <div className="font-Gloria_Hallelujah">
       <Navbar />
 
         <div className="timeline-container">

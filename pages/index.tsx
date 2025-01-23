@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function Home() {
   return (
     
-   <div className="font-[family-name:var(--font-gloria-hallelujah)">
+   <div className="font-Gloria_Hallelujah">
     <Navbar />
 
     <div className="container">
@@ -27,7 +27,7 @@ export default function Home() {
 
 
       <div className="sunflower inline-block">
-        <Image className="sunflower-img" src="/sunflower_little.png" alt="sunflower"/>
+        <Image layout="fixed" width={200} height={200} className="sunflower-img" src="/sunflower_little.png" alt="sunflower"/>
       </div>
 
 
