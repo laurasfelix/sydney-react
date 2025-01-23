@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Navbar from '../components/navbar'
 import WordleItem from '@/components/wordleitem';
-import { words } from './const';
+import { words } from '../public/const';
 
 export default function Wordle() {
     const [index, setIndex] = useState(0);
