@@ -17,10 +17,10 @@ const WordleItem: React.FC<WordleItemProps> = (
             return "green";
         }
         else if (answer.includes(choice[idx])){
-            return "gold";
+            return "orange";
         }
         else{
-            return "red";
+            return "gray";
         }
 
     };

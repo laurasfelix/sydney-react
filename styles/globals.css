@@ -227,3 +227,59 @@ img{-webkit-transition: transform 0.2s ease;
   flex-direction: column;
   gap: var(--vertical-gap);
 }
+
+.congrats{
+  background-color: #8B4513;
+  border-radius: 20%;
+  color: #95f475
+}
+
+.notcongrats{
+  background-color: black;
+  border-radius: 20%;
+  color: #dadada;
+}
+
+.msg{
+  position: fixed;
+  top: 10%;
+  font-size: x-large;
+}
+
+.wordleContainer{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;    
+  justify-content: center;
+
+}
+
+.play{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: xx-large;
+  width: 30%;
+  text-align: center;
+  color: #ad3b25;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.welcome-wordle{
+  font-size: xxx-large;
+  color: #5d2e0d;
+}
+
+.playButton{
+  border-radius: 20%;
+  background-color: #ad3b25;
+  color: #f6eb9f;
+  font-size: xx-large;
+  width: 50%;
+}

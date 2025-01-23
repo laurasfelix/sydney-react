@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {EventHandler, useEffect, useState} from 'react';
 import Navbar from '../components/navbar'
 import WordleItem from '@/components/wordleitem';
 import { words } from './const';
@@ -6,10 +6,13 @@ import { words } from './const';
 export default function Wordle() {
     const [index, setIndex] = useState(0);
     const [answer, setAnswer] = useState("");
+    const [clickedPlay, setClickedPlay] = useState(false);
    
 
     // startup choice for the answer
     useEffect(() => {
+
+      setClickedPlay(false);
 
       var length = words.length;
 
@@ -17,25 +20,39 @@ export default function Wordle() {
 
       setAnswer(words[choiceIdx]);
 
+
     }
     , [])
+
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+
+      setClickedPlay(true);
+      return;
+
+    };
 
     const [guess, setGuess] = useState(Array(6).fill(""));
     const [done, setDone] = useState(Array(6).fill(false));
     const [correct, setCorrect] = useState(false);
     const [full, setFull] = useState(false);
+    console.log(answer);
 
     useEffect( () => {
   
-      console.log("answer", answer);
-      console.log("")
       if (guess[index] == answer && answer != ""){
         setCorrect(true);
       }
+      else{
+        setCorrect(false);
+      }
+
+    console.log("value of correct", correct, "guess", guess, "done", done);
 
     }
-    , [guess, answer]);
+    , [guess]);
 
+
+    console.log("answer: {", answer, "} guess: {", guess, "} correct: {", correct, "} full : {", full, "} done: ", done);
 
     useEffect(() => {
 
@@ -47,6 +64,7 @@ export default function Wordle() {
 
         if (/^[a-z]$/.test(letter) && !correct && !done.every(Boolean)){
           setGuess(prev => {
+            
             const newGuesses = [...prev];
             if ((newGuesses[index] + letter).length <= 5)
             {
@@ -58,6 +76,14 @@ export default function Wordle() {
                 setFull(false);
               }
             newGuesses[index] += letter;
+
+            if (newGuesses[index] == answer && answer != "")
+            {
+              setCorrect(true);
+            }
+            else{
+              setCorrect(false);
+            }
             }
             return newGuesses;
           });
@@ -66,6 +92,7 @@ export default function Wordle() {
 
         else if (letter === 'backspace') {
           setFull(false);
+          setCorrect(false);
           setGuess((prev) => {
           const newGuesses = [...prev];
           newGuesses[index] = newGuesses[index].slice(0, -1);
@@ -73,15 +100,17 @@ export default function Wordle() {
         })
       }
         
-        else if ((letter == "enter" || letter == "Enter") && !correct && full)
+        else if ((letter == "enter" || letter == "Enter") && !done[index] && full && guess[index] != "")
         {
-
           setDone((prev) => {
             const newDone = [...prev];
             newDone[index] = true;
             return newDone;
           });
+          if (guess[index] != answer){
+          setCorrect(false);
           setIndex((prev) => prev + 1);
+          }
         }
 
       };
@@ -97,34 +126,53 @@ export default function Wordle() {
       
      <div className="font-[family-name:var(--font-gloria-hallelujah)">
       <Navbar />
-      
 
-      <div className='wordle'>
-
-        {guess.map((item, idx) =>
-
-        (
-          //this shows each wordle item one by one
-        <div key={idx}>
-
-        <WordleItem
-            wordChosen={item}
-            wordAnswer={answer}
-            done={done}
-            idx={idx}
-          />
-
+      {
+        !clickedPlay &&
+        <div className='play'>
+          <div className='welcome-wordle'> Hey there. </div>
+          <span>Get 6 (SIX) chances to guess a Sydney-related 5-letter word.</span>
+          <div className='playButton'> <button onClick={handleClick}> play </button> </div>
         </div>
-          
-        )
+      }
+      
+        {clickedPlay && <div className='wordleContainer'>
 
-        )
+          <div className='wordle'>
 
-        }
+            {guess.map((item, idx) =>
 
-        {correct && done[index] && <div> Woah, congrats!! You got it. </div> }
+            (
+              //this shows each wordle item one by one
+            <div key={idx}>
 
-      </div>
+              <WordleItem
+                  wordChosen={item}
+                  wordAnswer={answer}
+                  done={done}
+                  idx={idx}
+                />
+
+            </div>
+              
+            )
+
+            )
+
+            }
+
+
+          </div>
+
+              <div className='msg'>
+
+              {correct && done[index] && <div className='congrats'> Woah, congrats!! You got it. </div> }
+
+              {!correct && done.every(Boolean) && <div className='notcongrats'> Oops :( it's {answer}... </div>}
+
+              </div>
+
+        </div>}
 
       </div>
     )}
