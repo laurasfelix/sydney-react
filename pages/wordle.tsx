@@ -14,9 +14,9 @@ export default function Wordle() {
 
       setClickedPlay(false);
 
-      let length = words.length;
+      const length = words.length;
 
-      let choiceIdx = Math.floor(Math.random() * length);
+      const choiceIdx = Math.floor(Math.random() * length);
 
       setAnswer(words[choiceIdx]);
 
@@ -24,7 +24,7 @@ export default function Wordle() {
     }
     , [])
 
-    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleClick = () => {
 
       setClickedPlay(true);
       return;
