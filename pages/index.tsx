@@ -1,6 +1,6 @@
 //pages/index.tsx
 import Navbar from '../components/navbar'
-
+import Image from 'next/image';
 export default function Home() {
   return (
     
@@ -27,7 +27,7 @@ export default function Home() {
 
 
       <div className="sunflower inline-block">
-        <img className="sunflower-img" src="/sunflower_little.png" />
+        <Image className="sunflower-img" src="/sunflower_little.png" alt="sunflower"/>
       </div>
 
 

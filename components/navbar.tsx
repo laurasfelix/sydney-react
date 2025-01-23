@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import Image from 'next/image';
 
 const Navbar = () => {
 
@@ -7,7 +8,7 @@ const Navbar = () => {
         <div className='navbar'>
                 <ul className='navbar-list'>
                     <li>
-                    <Link href="/"> <img src="/sunflower.png" width="28px" height="auto"/> </Link>
+                    <Link href="/"> <Image alt="sunflower" src="/sunflower.png" width="28"/> </Link>
                     </li>
                     <Link className="title-hover" href="/timeline"> timeline </Link>
                     <li>
